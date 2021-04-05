@@ -12,8 +12,11 @@ public class BlackJackController {
     public void play() {
         List<String> requestPlayers = InputView.requestPlayers();
         List<Money> requestCapital = InputView.requestCapital(requestPlayers);
+
         BlackJackGame blackJackGame = new BlackJackGame(requestPlayers, requestCapital);
+
         OutputView.showInitiate(blackJackGame);
+
         process(blackJackGame);
         terminateGame(blackJackGame);
     }
