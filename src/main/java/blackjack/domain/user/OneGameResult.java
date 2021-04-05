@@ -11,6 +11,16 @@ public enum OneGameResult {
         this.gameKoreanResult = gameKoreanResult;
     }
 
+    public static OneGameResult getGameExpressResult(double profitRate) {
+        if (profitRate < 0) {
+            return OneGameResult.LOSE;
+        }
+        if (profitRate > 0) {
+            return OneGameResult.WIN;
+        }
+        return OneGameResult.TIE;
+    }
+
     public String getResult() {
         return this.gameKoreanResult;
     }

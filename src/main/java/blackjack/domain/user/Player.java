@@ -17,19 +17,9 @@ public class Player extends User {
 
     public OneGameResult betResult(Dealer dealer) {
         double profitRate = super.getProfitRate(dealer);
-        OneGameResult gameResult = getGameExpressResult(profitRate);
+        OneGameResult gameResult = OneGameResult.getGameExpressResult(profitRate);
         calculateMoneyResult(dealer, profitRate);
         return gameResult;
-    }
-
-    private OneGameResult getGameExpressResult(double profitRate) {
-        if (profitRate < 0) {
-            return OneGameResult.LOSE;
-        }
-        if (profitRate > 0) {
-            return OneGameResult.WIN;
-        }
-        return OneGameResult.TIE;
     }
 
     private void calculateMoneyResult(Dealer dealer, double profitRate){
