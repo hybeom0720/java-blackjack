@@ -12,9 +12,14 @@ public class BlackJack extends Terminant{
 
     @Override
     public double getProfitRate(State dealerState) {
-        if (dealerState instanceof BlackJack) {
+        if (dealerState.isBlackJack()) {
             return ZERO_RATE;
         }
         return BLACK_JACK_RATE;
+    }
+
+    @Override
+    public boolean isBlackJack() {
+        return true;
     }
 }

@@ -13,6 +13,10 @@ public abstract class BasicState implements State {
         this.userDeck = userDeck;
     }
 
+    public boolean isBlackJack() {
+        return false;
+    }
+
     @Override
     public UserDeck getUserDeck() {
         return this.userDeck;
